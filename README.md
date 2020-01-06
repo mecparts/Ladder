@@ -44,8 +44,8 @@ can do.
 
 ## References
 
-[Original Ladder game](http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/lambda/soundpot/f/ladder13.lbr)
-[Ladder in Java](http://ostermiller.org/ladder/)
-[Ladder in golang](https://github.com/SmallRoomLabs/ladder)
+[Original Ladder game](http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/lambda/soundpot/f/ladder13.lbr)<br>
+[Ladder in Java](http://ostermiller.org/ladder/)<br>
+[Ladder in golang](https://github.com/SmallRoomLabs/ladder)<br>
 
 
