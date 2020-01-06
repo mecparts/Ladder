@@ -1,17 +1,16 @@
 # Ladder
 The classic CP/M game Ladder re-written in Turbo Pascal.
 
-#### This is a rewrite in Turbo Pascal of the classic CP/M game 
-"Ladder", originally written by Yahoo Software (not Yahoo!).
+#### This is a rewrite in Turbo Pascal of the classic CP/M game "Ladder", originally written by Yahoo Software (not Yahoo!).
 
-[Main Menu](https://github.com/mecparts/Ladder/images/mainmenu.png "Main Menu")
+![Main Menu](https://github.com/mecparts/Ladder/images/mainmenu.png "Main Menu")
 
 Ladder is an ASCII character based platform arcade game similar to 
 Donkey Kong. You travel through levels with platforms and ladders 
 where rocks fall down from the top while you collect statues 
 before reaching the exit.
 
-[Playing](https://github.com/mecparts/Ladder/images/playing.png "Playing")
+![Playing](https://github.com/mecparts/Ladder/images/playing.png "Playing")
 
 Back in 1999 Stephen Ostermiller made a version of [Ladder in 
 Java](http://ostermiller.org/ladder/). Later, Mats Engstrom of 
