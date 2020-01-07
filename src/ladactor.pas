@@ -284,7 +284,7 @@ loopAgain: { If just started falling we need to retest all conditions }
       IF (a.X + dirs[jd].x >= 1) AND (a.X + dirs[jd].x <= LevelCols) THEN BEGIN
         CASE m.Field[a.Y + dirs[jd].y][a.X + dirs[jd].x] OF
 
-          '=', '|': BEGIN
+          '=', '|', '-' : BEGIN
             { If bumped into something try falling }
             IF OnSolid(a) THEN BEGIN
               a.Dir := a.DirRequest;
