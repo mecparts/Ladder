@@ -8,7 +8,7 @@ CONST
   CursOffStr = #$1B'[?25l';    { turn cursor off string }
   CursOnStr = #$1B'[?25h';     { turn cursor on string }
   NumPlaySpeeds = 5;           { # of different playing speeds }
-  BonusTimeDecInterval = 1000; { decrement bonus time every second }
+  BonusTimeDecInterval = 3000; { decrement bonus time every 3 seconds }
 
   NumLevels = 7;               { # of distinct levels }
   NumCycles = 6;               { # of level cycles, 1 less than # of distinct levels }

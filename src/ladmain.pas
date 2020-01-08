@@ -56,7 +56,7 @@ restartLevel:
       msecs := 0;
       bonusTimeTicks := bonusTimeTicks + moveInterval;
       IF bonusTimeticks >= BonusTimeDecInterval THEN BEGIN
-        { every second, decrement the bonus time/time remaining value }
+        { every 3 seconds, decrement the bonus time/time remaining value }
         bonusTimeTicks := bonusTimeTicks - BonusTimeDecInterval;;
         m.RemainingBonusTime := Pred(m.RemainingBonusTime);
         GotoXY(74, 21);
@@ -111,8 +111,8 @@ restartLevel:
                 { finished last cycle, end the game unconditionally }
                 { TODO: what happened in the original game??? }
                 m.LadsRemaining := 1;
-                IF LadDeath THEN
-                  GOTO restartGame;
+                IF LadDeath OR TRUE THEN
+                  GOTO restartGame
               END;
             END;
             GOTO newLevel;
