@@ -1,5 +1,5 @@
 # Ladder
-The classic CP/M game Ladder re-written in Turbo Pascal.
+The classic CP/M game Ladder reverse engineered in Turbo Pascal.
 
 #### This is a rewrite in Turbo Pascal of the classic CP/M game "Ladder", originally written by Yahoo Software (not Yahoo!).
 
