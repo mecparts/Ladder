@@ -1,5 +1,5 @@
 CONST
-  Version = '1.31TP';
+  Version = '1.32TP';
   DataFileName = 'LADDER.DAT';
   ConfigFileName = 'LADCONF.COM';
   NumHighScores = 5;           { # of stored high scores }
@@ -11,7 +11,6 @@ CONST
   BonusTimeDecInterval = 3000; { decrement bonus time every 3 seconds }
 
   NumLevels = 7;               { # of distinct levels }
-  NumCycles = 6;               { # of level cycles, 1 less than # of distinct levels }
   LevelRows = 20;              { # of rows in a level map }
   LevelCols = 79;              { # of chars in a level map }
   MaxDispensers = 3;           { max # of rock dispensers on a level }

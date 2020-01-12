@@ -203,7 +203,7 @@ BEGIN
   Assign(dataFile, DataFileName);
   Reset(dataFile);
   IF IOresult <> 0 THEN BEGIN
-    WriteLN('Reset on LADDER.DAT failed');
+    WriteLN('Reset failed on LADDER.DAT');
     Halt;
   END;
   WITH dataFileContents DO BEGIN
@@ -216,7 +216,7 @@ BEGIN
     END;
     BlockWrite(dataFile, dataFileContents, SizeOf(dataFileContents) DIV 128);
     IF IOresult <> 0 THEN BEGIN
-      WriteLN('BlockWrite on LADDER.DAT failed');
+      WriteLN('BlockWrite failed on LADDER.DAT');
       Halt;
     END;
   END;
@@ -264,7 +264,7 @@ BEGIN
           4 : WriteLN('Looks like we have a Lad-Der here');
           5 : WriteLN('Yeah! Now you are a Lad-Wiz!');
           6 : WriteLN('Wow! You are now a Lad-Guru!');
-          7 : WriteLN('You are a true Lad-Master!!!');
+          ELSE WriteLN('You are a true Lad-Master!!!');
         END;
         WriteLN;
         While KeyPressed DO

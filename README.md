@@ -36,11 +36,12 @@ isn't a particularly critical limitation.
 
 ## Limitations
 
-At the moment, once you've successfully completed the 27th level 
-(Gang Land), the program ends. If anyone knows what the original 
-program actually did (I never managed to get anywhere near to
-completing the original game), let me know and I'll see what I 
-can do.
+At the moment, once you've successfully completed the 7th distinct level 
+(Gang Land), the program just cycles through all 7 sevens over and over
+again until the bonus time becomes too short to actually finish a level.
+If anyone knows what the original program actually did (I never managed
+to get anywhere near to completing the original game), let me know and
+I'll see what I can do.
 
 ## References
 

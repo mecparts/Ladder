@@ -102,18 +102,12 @@ restartLevel:
           '$' : BEGIN    { at the Gold: level done }
             UpdateScore(ScoreMoney);
             displayLevel := Succ(displayLevel);
-            m.Level := Succ(m.Level);
-            IF m.Level > levelCycle + 1 THEN BEGIN
+            IF (m.Level > levelCycle) OR (m.Level = NumLevels) THEN BEGIN
               { done with current cycle, recycle to 1st level }
-              levelCycle := SUCC(levelCycle);
               m.Level := 1;
-              IF levelCycle > NumCycles THEN BEGIN
-                { finished last cycle, end the game unconditionally }
-                { TODO: what happened in the original game??? }
-                m.LadsRemaining := 1;
-                IF LadDeath OR TRUE THEN
-                  GOTO restartGame
-              END;
+              levelCycle := SUCC(levelCycle);
+            END ELSE BEGIN
+              m.Level := Succ(m.Level);
             END;
             GOTO newLevel;
           END;
