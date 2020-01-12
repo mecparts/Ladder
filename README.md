@@ -43,6 +43,17 @@ If anyone knows what the original program actually did (I never managed
 to get anywhere near to completing the original game), let me know and
 I'll see what I can do.
 
+The Delay(ms) call in Turbo Pascal only works for a Z80 running
+at up to 32MHz (and TINST will only allow you to specify a value of up
+to 20MHZ if I recall correctly). So if you're trying to run this on a
+system with an effective clock speed of greater than 32MHz, you're going
+to have to come up with another mechanism. That's not an insurmountable
+roadblock though; on my 144MHz-Z80-equivalent RunCPM box running on a
+Teensy 4.0, I patched the Turbo Pascal runtime to make a call to a BDOS
+extension I created to call the Arduino's delay() function. Works like
+a charm. If your system includes any kind of millisecond counter you can
+read, that's a good spot to start looking.
+
 ## References
 
 [Original Ladder game](http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/lambda/soundpot/f/ladder13.lbr)<br>
