@@ -34,6 +34,11 @@ terminal. LADDER.PAS is the main part of the program. I've
 successfully compiled this on a 58K CP/M system, so available RAM 
 isn't a particularly critical limitation.
 
+Once you've compiled LADDER.COM, copy LADCONF.COM to the same user area.
+If you don't have a LADDER.DAT file, when you run LADDER the first time
+it'll automatically load LADCONF to set up the movement keys and
+options, then transfer you back to LADDER.
+
 ## Limitations
 
 At the moment, once you've successfully completed the 7th distinct level 
