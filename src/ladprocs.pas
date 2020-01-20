@@ -362,12 +362,11 @@ BEGIN
       (m.Field[lad.Y + 1][lad.X] = ' ') THEN BEGIN
       { score for jumping rocks }
       UpdateScore(ScoreRock);
-    END ELSE IF (lad.Y = rockPtr^.Y - 2) AND
-      (m.Field[lad.Y + 1][lad.X] = ' ') AND
-      (m.Field[lad.Y + 2][lad.X] = ' ') THEN BEGIN
-      { score for jumping rocks }
-      UpdateScore(ScoreRock);
-    END;
+    END ELSE IF (lad.Y = rockPtr^.Y - 2) THEN
+      IF (m.Field[lad.Y + 1][lad.X] = ' ') AND (m.Field[lad.Y + 2][lad.X] = ' ') THEN BEGIN
+        { score for jumping rocks }
+        UpdateScore(ScoreRock);
+      END;
   END;
 END;
 

@@ -22,7 +22,10 @@ END;
 
 FUNCTION EmptySpace(x, y : INTEGER) : BOOLEAN;
 BEGIN
-  EmptySpace := (x < 1) OR (x > LevelCols) OR NOT (m.Field[y][x] IN ['|', '=']);
+  IF (x < 1) OR (x > LevelCols) THEN
+    EmptySpace := TRUE
+  ELSE
+    EmptySpace := NOT (m.Field[y][x] IN ['|', '=']);
 END;
 
 {
@@ -143,12 +146,18 @@ loopAgain: { If just started falling we need to retest all conditions }
     { If stopped select a random direction }
     IF a.Dir = STOPPED THEN BEGIN
       CASE Random(2) OF
-        0: IF (a.X > 1) AND EmptySpace(a.X - 1, a.Y) THEN
-             a.DirRequest := LEFT
+        0: IF (a.X > 1) THEN
+             IF EmptySpace(a.X - 1, a.Y) THEN
+               a.DirRequest := LEFT
+             ELSE
+               a.DirRequest := RIGHT
            ELSE
              a.DirRequest := RIGHT;
-        1: IF (a.X < LevelCols) AND EmptySpace(a.X + 1, a.Y) THEN
-             a.DirRequest := RIGHT
+        1: IF (a.X < LevelCols) THEN
+             IF EmptySpace(a.X + 1, a.Y) THEN
+               a.DirRequest := RIGHT
+             ELSE
+               a.DirRequest := LEFT
            ELSE
              a.DirRequest := LEFT;
       END;
@@ -313,7 +322,10 @@ loopAgain: { If just started falling we need to retest all conditions }
             a.X := a.X + dirs[jd].x;
             a.Y := a.Y + dirs[jd].y;
             a.JumpStep := SUCC(a.JumpStep);
-            IF (a.JumpStep > JumpsLen) OR (jumpPaths[a.Dir][a.JumpStep] = ACTIONEND) THEN BEGIN
+            IF (a.JumpStep > JumpsLen) THEN BEGIN
+              UpdateDir(a);
+              a.JumpStep := 0;
+            END ELSE IF (jumpPaths[a.Dir][a.JumpStep] = ACTIONEND) THEN BEGIN
               UpdateDir(a);
               a.JumpStep := 0;
             END;

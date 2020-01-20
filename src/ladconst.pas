@@ -1,5 +1,5 @@
 CONST
-  Version = '1.32TP';
+  Version = '1.33TP';
   DataFileName = 'LADDER.DAT';
   ConfigFileName = 'LADCONF.COM';
   NumHighScores = 5;           { # of stored high scores }
