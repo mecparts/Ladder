@@ -16,7 +16,7 @@ Back in 1999 Stephen Ostermiller made a version of [Ladder in
 Java](http://ostermiller.org/ladder/). Later, Mats Engstrom of 
 SmallRoomLabs started another version in of [Ladder in 
 golang](https://github.com/SmallRoomLabs/ladder). Between my own 
-memories of playing the original game on a Kaypro, and the Stephen 
+memories of playing the original game on a Kaypro, and Stephen 
 Ostermiller's and Mats Engstrom's code, I was able to come up 
 with this version.
 
@@ -42,11 +42,11 @@ options, then transfer you back to LADDER.
 ## Limitations
 
 At the moment, once you've successfully completed the 7th distinct level 
-(Gang Land), the program just cycles through all 7 sevens over and over
-again until the bonus time becomes too short to actually finish a level.
-If anyone knows what the original program actually did (I never managed
-to get anywhere near to completing the original game), let me know and
-I'll see what I can do.
+(Gang Land), the program just cycles through all 7 seven levels over and
+over again until the bonus time becomes too short to actually finish a 
+level. If anyone knows what the original program actually did (I never 
+managed to get anywhere near to completing the original game), let me 
+know and I'll see what I can do.
 
 The Delay(ms) call in Turbo Pascal only works for a Z80 running
 at up to 32MHz (and TINST will only allow you to specify a value of up
