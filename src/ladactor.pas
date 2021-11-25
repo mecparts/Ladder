@@ -29,6 +29,14 @@ BEGIN
 END;
 
 {
+  OnLadder returns true when the actor is a on a Ladder
+}
+FUNCTION OnLadder(a : ActorType) : BOOLEAN;
+BEGIN
+  OnLadder := m.Field[a.Y][a.X] = 'H';
+END;
+
+{
   AboveLadder returns true when the actor is a above a Ladder
 }
 FUNCTION AboveLadder(a : ActorType) : BOOLEAN;
@@ -172,12 +180,23 @@ loopAgain: { If just started falling we need to retest all conditions }
       a.DirRequest := FALLING;
 
     { If Der rock just rolled over the top of a ladder then randomize direction }
-    IF AboveLadder(a) AND (a.Dir IN [LEFT, RIGHT]) THEN
-      CASE Random(4) OF
-        0: a.DirRequest := LEFT;
-        1: a.DirRequest := RIGHT;
-        ELSE a.DirRequest := DOWN;
-      END;
+    IF a.Dir IN [LEFT, RIGHT] THEN BEGIN
+      IF AboveLadder(a) THEN
+        CASE Random(3) OF
+          1: IF a.Dir = LEFT THEN
+               a.DirRequest := RIGHT
+             ELSE
+               a.DirRequest := LEFT;
+          2: a.DirRequest := DOWN;
+        END
+      ELSE IF OnLadder(a) THEN
+        CASE Random(2) OF
+          1: IF a.Dir = LEFT THEN
+               a.DirRequest := RIGHT
+             ELSE
+               a.DirRequest := LEFT;
+        END;
+    END;
 
     { If on an Eater kill the stone }
     IF OnEater(a) THEN BEGIN
@@ -408,4 +427,3 @@ loopAgain: { If just started falling we need to retest all conditions }
   IF a.AType = ALAD THEN
     UpdateLadChar(a);
 END;
-
